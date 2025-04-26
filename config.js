@@ -24,17 +24,17 @@ global.prems = []
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.packname = `[ 🌪️Sticker Maker`
-global.author = 'ᑲ᥆𝗍 ᑲᥲrᑲ᥆zᥲ 🌪️]'
-global.stickpack = '©ᑲ᥆𝗍 ᑲᥲrᑲ᥆zᥲ-ᥲі'
-global.stickauth = 'ᑲᥡ ᑲᥲrᑲ᥆zᥲ'
-global.wm = 'ᑲᥲrᑲ᥆zᥲ 🌪️'
-global.dev = '© 𝖯᥆𝗐ᥱ𝗋ᥱძ ᑲᥡ 𝖲ᥙᥒ𝖿ᥣᥲ𝗋ᥱ  ☂︎  𝖳ᥱᥲ𝗆'
-global.wait = '🌪️ *Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ, sᴏʏ ʟᴇɴᴛ𝙾... ฅ^•ﻌ•^ฅ\n\n> ᑲ᥆𝗍 ᑲᥲrᑲ᥆zᥲ 🌪️*'
-global.botname = '[ 🌪️𝐁𝐚𝐫𝐛𝐨𝐳𝐚 𝐀𝐢 𝐖𝐡𝐚𝐬𝐀𝐩𝐩 𝐁𝐨𝐭 ]'
+global.author = 'Casebache Bot AI 🌪️]'
+global.stickpack = '©bot Casebache'
+global.stickauth = 'by hector'
+global.wm = 'hector🌪️'
+global.dev = '© Powered by hector'
+global.wait = '🌪️ *Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ, sᴏʏ ʟᴇɴᴛ𝙾... ฅ^•ﻌ•^ฅ\n\n> Bot  Casebache🌪️*'
+global.botname = '[ 🌪️ bot Casebache ]'
 global.textbot = `Powered By Bot Barboza🌪️`
-global.dev = '© 𝖯᥆𝗐ᥱ𝗋ᥱძ ᑲᥡ 𝖲ᥙᥒ𝖿ᥣᥲ𝗋ᥱ  ☂︎  𝖳ᥱᥲ𝗆'
+global.dev = '© Powered Héctor MD'
 global.listo = '*Aqui tiene ฅ^•ﻌ•^ฅ*'
-global.namechannel = 'ᑲ᥆𝗍 ᑲᥲrᑲ᥆zᥲ-ᥲі🌪️'
+global.namechannel = 'bot Casebache🌪️'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
