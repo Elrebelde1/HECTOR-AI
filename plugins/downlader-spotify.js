@@ -79,11 +79,11 @@ let handler = async (m, { conn, text, usedPrefix }) => {
         audio: { url: music },
         mimetype: "audio/mpeg",
         fileName: `${downloadTitle}.mp3`,
-        caption: "🎶 Música descargada gracias a BarbozaBot-Ai",
+        caption: "🎶 Música descargada gracias a Casebache Bot AI",
         contextInfo: {
           externalAdReply: {
             title: title || "Spotify Music",
-            body: artists || "Powered by BarbozaBot-Ai",
+            body: artists || "Powered by Casebache Bot AI",
             thumbnailUrl: cover,
             mediaUrl: trackUrl,
           },
