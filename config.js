@@ -24,17 +24,17 @@ global.prems = []
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.packname = `[ 🌪️Sticker Maker`
-global.author = 'Casebache Bot AI 🌪️]'
-global.stickpack = '©bot Casebache'
-global.stickauth = 'by hector'
-global.wm = 'hector🌪️'
-global.dev = '© Powered by hector'
-global.wait = '🌪️ *Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ, sᴏʏ ʟᴇɴᴛ𝙾... ฅ^•ﻌ•^ฅ\n\n> Bot  Casebache🌪️*'
-global.botname = '[ 🌪️ bot Casebache ]'
-global.textbot = `Powered By Bot Casebache🌪️`
-global.dev = '© Powered Héctor MD'
+global.author = 'ᥴᥲsᥱᑲᥲᥴһᥱ ᑲ᥆𝗍 ᥲі 🌪️]'
+global.stickpack = '©ᑲ᥆𝗍 ᥴᥲsᥱᑲᥲᥴһᥱ'
+global.stickauth = 'ᑲᥡ һᥱᥴ𝗍᥆r'
+global.wm = 'һᥱᥴ𝗍᥆r🌪️'
+global.dev = '© ⍴᥆ᥕᥱrᥱძ ᑲᥡ һᥱᥴ𝗍᥆r'
+global.wait = '🌪️ *Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ, sᴏʏ ʟᴇɴᴛ𝙾... ฅ^•ﻌ•^ฅ\n\n> ᑲ᥆𝗍  ᥴᥲsᥱᑲᥲᥴһᥱ🌪️*'
+global.botname = '[ 🌪️ ᑲ᥆𝗍  ᥴᥲsᥱᑲᥲᥴһᥱ ]'
+global.textbot = `⍴᥆ᥕᥱrᥱძ ᑲᥡ ᥴᥲsᥱᑲᥲᥴһᥱ mძ🌪️`
+global.dev = '© ⍴᥆ᥕᥱrᥱძ һᥱᥴ𝗍᥆r mძ'
 global.listo = '*Aqui tiene ฅ^•ﻌ•^ฅ*'
-global.namechannel = 'bot Casebache🌪️'
+global.namechannel = 'ᑲ᥆𝗍  ᥴᥲsᥱᑲᥲᥴһᥱ🌪️'
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.catalogo = fs.readFileSync('./storage/img/catalogo.png')
