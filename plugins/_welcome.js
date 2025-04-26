@@ -9,7 +9,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
 
     // Obtener foto de perfil del usuario y manejar errores
     let ppUrl = await conn.profilePictureUrl(m.messageStubParameters[0], "image").catch(
-      () => "https://qu.ax/Mvhfa.jpg" // Imagen por defecto si falla
+      () => "https://qu.ax/JPQNQ.jpg" // Imagen por defecto si falla
     );
     let imgBuffer = await fetch(ppUrl).then(res => res.buffer()).catch(() => null); // Si falla el fetch, img será null
 
@@ -18,7 +18,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
     if (!chat) return true;
 
     // Variables del bot
-    const botName = "Barboza Bot";
+    const botName = "Casebache";
     const user = `@${m.messageStubParameters[0].split("@")[0]}`;
 
     // **Bienvenida** (StubType == 27)
