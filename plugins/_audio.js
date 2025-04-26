@@ -147,7 +147,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       `💎 *Nombre:* ${name}\n` +
       `🗣️ *Artista:* ${artist}\n` +
       `⏱️ *Duración:* ${duration}\n\n` +
-      `> @Barboza - Bot - 𝟢𝟨`,
+      `> @Casebache Bot AI`,
     contextInfo: {
       externalAdReply: {
         title: name,
