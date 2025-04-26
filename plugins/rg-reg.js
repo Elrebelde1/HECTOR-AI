@@ -1,73 +1,49 @@
 
 import { createHash } from 'crypto';
 
-let handler = async (m, { conn, text, args, usedPrefix, command }) => {
+let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i;
+let handler = async function (m, { conn, text, usedPrefix, command }) {
     let user = global.db.data.users[m.sender];
-    let channelID = '120363414007802886@newsletter'; // ID del canal donde se enviará la notificación
-    let regFormat = /\|?(.*)([.|] *?)([0-9]*)$/i;
+    let name2 = conn.getName(m.sender);
+    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? this.user.jid : m.sender;
+    let pp = await this.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/JPQNQ.jpg');
 
-    // Validar si el usuario ya está registrado
-    if (user.registered) {
-        return m.reply(`✅ Ya estás registrado.\n\nSi deseas registrarte nuevamente, elimina tu registro actual usando el comando:\n*${usedPrefix}unreg*`);
-    }
+    if (user.registered === true) throw `*⚠️ Ya estás registrado*\n\n¿Quieres volver a registrarte?\n\n💬 Usa este comando para *eliminar tu registro*:\n*${usedPrefix}unreg* <Número de serie>`;
+    if (!Reg.test(text)) throw `*⚠️ Formato incorrecto*\n\n📝 Uso del comando: *${usedPrefix + command} nombre.edad*\n💡 Ejemplo : *${usedPrefix + command}* ${name2}.18`;
 
-    // Validar formato del comando
-    if (!regFormat.test(text)) {
-        return m.reply(`❌ Formato incorrecto.\n\nUsa el comando así: *${usedPrefix + command} nombre.edad*\nEjemplo: *${usedPrefix + command} Barboza.18*`);
-    }
-
-    let [_, name, splitter, age] = text.match(regFormat);
-    if (!name || !age) return m.reply('❌ El nombre y la edad son obligatorios.');
-    if (name.length > 50) return m.reply('❌ El nombre no puede exceder los 50 caracteres.');
-
+    let [_, name, splitter, age] = text.match(Reg);
+    if (!name) throw '*📝 El nombre no puede estar vacío*';
+    if (!age) throw '*📝 La edad no puede estar vacía*';
+    if (name.length >= 30) throw '*⚠️ El nombre es demasiado largo*'; 
     age = parseInt(age);
-    if (isNaN(age) || age < 5 || age > 100) return m.reply('❌ La edad ingresada no es válida.');
+    if (age > 100) throw '*👴🏻 Wow el abuelo quiere jugar con el bot*';
+    if (age < 5) throw '*👀 Hay un bebé jsjsj*';
 
-    // Asignar datos al usuario
     user.name = name.trim();
     user.age = age;
+    user.regTime = + new Date();
     user.registered = true;
-    user.regTime = +new Date();
 
-    // Generar un hash único para el usuario
-    let userHash = createHash('md5').update(m.sender).digest('hex');
+    if (!user.limit) user.limit = 0;
+    user.limit += 10;
 
-    // Confirmación al usuario registrado
-    let confirmMessage = `🎉 *¡Registro exitoso!*\n\n📂 Información registrada:\n👤 *Usuario:* ${name}\n🎂 *Edad:* ${age} años\n✅ *Estado:* Verificado\n\nUsa *#perfil* para ver tus detalles.`;
+    let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 6);
+    m.react('📩');
 
-    await conn.sendMessage(m.chat, {
-        text: confirmMessage,
-        contextInfo: {
-            externalAdReply: {
-                title: '✅ Registro completado',
-                body: 'Gracias por registrarte.',
-                thumbnailUrl: 'https://qu.ax/Mvhfa.jpg', // Imagen proporcionada
-                sourceUrl: 'https://your-website.com', // Personaliza con tu enlace
-                mediaType: 1,
-                renderLargerThumbnail: true
-            }
-        }
+    let regbot = `🗃️ *R E G I S T R A D O* 🗃️\n
+💌 *Nombre:* ${name}
+📆 *Edad* : ${age} años
+🍬 *Dulces añadidos:* 10`;
+
+    await conn.sendMessage(m.chat, { 
+        image: { url: pp }, 
+        caption: regbot,
+        viewOnce: true
     }, { quoted: m });
-
-    // Enviar notificación al canal
-    let notificationMessage = `📥 *Nuevo usuario registrado:*\n\n👤 *Nombre:* ${name}\n🎂 *Edad:* ${age} años\n🆔 *Registro Hash:* ${userHash}\n✅ *Estado:* Verificado`;
-    await conn.sendMessage(channelID, {
-        text: notificationMessage,
-        contextInfo: {
-            externalAdReply: {
-                title: '🔔 Nuevo registro',
-                body: `Usuario ${name} ha sido registrado con éxito.`,
-                thumbnailUrl: 'https://qu.ax/Mvhfa.jpg', // Imagen proporcionada
-                sourceUrl: 'https://your-website.com', // Personaliza con tu enlace
-                mediaType: 1,
-                renderLargerThumbnail: true
-            }
-        }
-    });
 };
 
 handler.help = ['reg'];
-handler.tags = ['register'];
-handler.command = ['reg', 'register', 'verificar', 'verify']; // Alias del comando
+handler.tags = ['rg'];
+handler.command = ['verify', 'reg', 'verificar'];
 
 export default handler;
