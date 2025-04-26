@@ -1,19 +1,39 @@
-
 import PhoneNumber from 'awesome-phonenumber';
 
 async function handler(m, { conn }) { 
-    let numcreador = '584146277368';
+    let numcreador = '+1 (830) 319-5196';
     let ownerJid = numcreador + '@s.whatsapp.net';
 
-    let name = await conn.getName(ownerJid) || 'Owner'; 
-    let about = (await conn.fetchStatus(ownerJid).catch(() => {}))?.status || 'bot Casebache';
-    let empresa = 'Barboza- Servicios Tecnológicos';
-    let imagen = 'https://qu.ax/JPQNQ.jpg'; // Reemplaza con la URL de la imagen que deseas mostrar
+    let name = await conn.getName(ownerJid) || 'owner'; 
+    let about = (await conn.fetchStatus(ownerJid).catch(() => {}))?.status || 'Bot MD ';
 
-    // Enviar imagen junto con el número del dueño y sus detalles
+    let empresa = 'MESITO - Servicios Tecnológicos';
+
+    let vcard = `
+BEGIN:VCARD
+VERSION:3.0
+N:;${name};;;
+FN:${name}
+ORG:${empresa};
+TITLE:CEO & Fundador
+TEL;waid=${numcreador}:${new PhoneNumber('+' + numcreador).getNumber('international')}
+EMAIL:
+URL:
+NOTE:${about}
+ADR:;;Dirección de tu empresa;;;;
+X-ABADR:ES
+X-ABLabel:Dirección Web
+X-ABLabel:Correo Electrónico
+X-ABLabel:Teléfono de contacto
+X-WA-BIZ-NAME:${name}
+X-WA-BIZ-DESCRIPTION:${about}
+END:VCARD`.trim();
+
     await conn.sendMessage(m.chat, { 
-        image: { url: imagen },
-        caption: `👤 *Dueño del bot*\n📌 *Nombre:* ${name}\n📞 *Número:* wa.me/${numcreador}
+        contacts: { 
+            displayName: name, 
+            contacts: [{ vcard }]
+        } 
     }, { quoted: m });
 }
 
