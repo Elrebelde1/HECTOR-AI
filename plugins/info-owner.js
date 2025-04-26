@@ -1,11 +1,11 @@
 import PhoneNumber from 'awesome-phonenumber';
 
 async function handler(m, { conn }) { 
-    let numcreador = '+18303195196';
+    let numcreador = '529981403699';
     let ownerJid = numcreador + '@s.whatsapp.net';
 
     let name = await conn.getName(ownerJid) || 'owner'; 
-    let about = (await conn.fetchStatus(ownerJid).catch(() => {}))?.status || 'Bot MD ';
+    let about = (await conn.fetchStatus(ownerJid).catch(() => {}))?.status || 'Creador de bots de Whatapp ';
 
     let empresa = 'MESITO - Servicios Tecnológicos';
 
