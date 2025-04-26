@@ -30,7 +30,7 @@ const fetchWithRetries = async (url, maxRetries = 2) => {
 let handler = async (m, { conn, text, usedPrefix }) => {
   if (!text) {
     return conn.sendMessage(m.chat, {
-      text: `🎧 *Spotify Search by BarbozaBot-Ai*\n\n❗ *Ingresa el nombre de la canción o artista que deseas buscar.*\n\n*Ejemplo:* ${usedPrefix}spotify Shape of You`,
+      text: `🎧 *Spotify Search *\n\n❗ *Ingresa el nombre de la canción o artista que deseas buscar.*\n\n*Ejemplo:* ${usedPrefix}spotify Shape of You`,
     });
   }
 
@@ -67,7 +67,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
     }
 
     // Mensaje estilizado para Spotify
-    const description = `🎧 *BarbozaBot-Ai: Tu música en un clic*\n\n🎵 *Título:* ${title || "No disponible"}\n🎤 *Artista:* ${artists || "Desconocido"}\n⭐ *Popularidad:* ${popularity || "No disponible"}\n🔗 *Spotify Link:* ${trackUrl}\n\n🟢 *Descargando tu canción...*`;
+    const description = `🎧 *Casebache Bot AI: Tu música en un clic*\n\n🎵 *Título:* ${title || "No disponible"}\n🎤 *Artista:* ${artists || "Desconocido"}\n⭐ *Popularidad:* ${popularity || "No disponible"}\n🔗 *Spotify Link:* ${trackUrl}\n\n🟢 *Descargando tu canción...*`;
 
     // Enviar mensaje con la información del track
     await conn.sendMessage(m.chat, { text: description });
