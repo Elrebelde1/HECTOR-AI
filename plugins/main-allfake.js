@@ -30,7 +30,7 @@ var handler = async function (m, conn, db) {
 
     // Obtener información del usuario
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-    let fotoperfil = await conn.profilePictureUrl(who, 'image').catch(() => 'https://qu.ax/QGAVS.jpg')
+    let fotoperfil = await conn.profilePictureUrl(who, 'image').catch(() => 'https://qu.ax/JPQNQ.jpg')
 
     // Obtener nacionalidad
     let api = await axios.get(`https://deliriussapi-oficial.vercel.app/tools/country?text=${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}`)
@@ -47,7 +47,7 @@ var handler = async function (m, conn, db) {
 
     // Lista de canales
     let canalIdM = ["120363414007802886@newsletter", "120363414007802886@newsletter"]
-    let canalNombreM = ["bot Barboza", "✧┊┋◟🚀Barboza🚀◞┊┋✧"]
+    let canalNombreM = ["bot Casebache", "✧┊┋◟🚀Casebache🚀◞┊┋✧"]
     
     async function getRandomChannel() {
         let randomIndex = Math.floor(Math.random() * canalIdM.length)
@@ -104,7 +104,7 @@ var handler = async function (m, conn, db) {
             externalAdReply: { 
                 showAdAttribution: true, 
                 title: "Texto del bot", 
-                body: '🚀 ♡⃝Barboza𝒕ᚐ҉ᚐ', 
+                body: '🚀 ♡⃝Casebacheᚐ҉ᚐ', 
                 previewType: "PHOTO", 
                 thumbnailUrl: "https://qu.ax/QGAVS.jpg", 
                 sourceUrl: "https://whatsapp.com/channel/0029Vaua0ZD3gvWjQaIpSy18", 
